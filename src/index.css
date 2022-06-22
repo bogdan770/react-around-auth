@@ -46,6 +46,11 @@
 @import url(../src/blocks/popup/__button/popup__button.css);
 @import url(../src/blocks/popup/__close/popup__close.css);
 @import url(../src/blocks/popup/__close-pic/popup__close-pic.css);
+@import url(../src/blocks/popup/__container/popup__container.css);
+@import url(../src/blocks/popup/__container/_type/popup__container_type_info-tool-tip.css);
+@import url(../src/blocks/popup/__container/_type/popup__container_type_image.css);
+
+
 /* popup and popup__form CSS style */
 
 @import url(../src/blocks/input/input.css);
@@ -61,3 +66,18 @@
 @import url(../src/blocks/popup/__error/popup__error.css);
 @import url(../src/blocks/popup/__error/_visible/popup__error_visible.css);
 @import url(../src/blocks/popup/__form/popup__form.css);
+
+@import url(../src/blocks/register/register.css);
+@import url(../src/blocks/register/__button/register__button.css);
+@import url(../src/blocks/register/__form/register__form.css);
+@import url(../src/blocks/register/__input/register__input.css);
+@import url(../src/blocks/register/__title/register__title.css);
+@import url(../src/blocks/register/__link/register__link.css);
+
+@import url(../src/blocks/header/__email/header__email.css);
+@import url(../src/blocks/header/__user-area/header__user-area.css);
+
+
+@import url(../src/blocks/enter/enter.css);
+@import url(../src/blocks/enter/__hover/enter__hover.css);
+
