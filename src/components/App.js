@@ -81,7 +81,7 @@ function App() {
     if (token) {
       localStorage.getItem(token);
       auth
-        .getContent(token)
+        .checkToken(token)
         .then(() => {
           setIsRegistered(true);
           navigate('/', { replace: true });
@@ -153,6 +153,7 @@ function App() {
       })
       .catch((err) => {
         console.log(`Error.....: ${err}`);
+        setIsRegistered(false);
       })
       .finally(handleSubmitInfoToolTip);
   }
@@ -192,6 +193,7 @@ function App() {
     setIsStateEditAvatarPopupOpen(false);
     setIsImagePopupOpen(false);
     setSelectedCard({});
+    setIsInfoToolTipPopupOpen(false);
   }
 
   function handleCardLike(card) {
@@ -301,6 +303,12 @@ function App() {
                   isOpen={isImagePopupOpen}
                   isClose={closeAllPopups}
                 />
+                      <InfoToolTip
+                  isOpen={isInfoToolTipPopupOpen}
+                  closeAllPopups={closeAllPopups}
+                  isRegistered={isRegistered}
+                  handleCloseSuccessPopup={handleCloseSuccessPopup}
+                />
               </ProtectedRoute>
             }
             />
@@ -318,12 +326,6 @@ function App() {
                   email={email}
                   password={password}
                 />
-                <InfoToolTip
-                  isOpen={isInfoToolTipPopupOpen}
-                  closeAllPopups={closeAllPopups}
-                  isRegistered={isRegistered}
-                  handleCloseSuccessPopup={handleCloseSuccessPopup}
-                />
               </>
             }
           />
@@ -339,10 +341,6 @@ function App() {
                   email={email}
                   password={password}
                   handleSubmitLogin={handleSubmitLogin}
-                />
-                <InfoToolTip
-                  isOpen={isInfoToolTipPopupOpen}
-                  closeAllPopups={closeAllPopups}
                 />
               </>
             }

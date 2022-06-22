@@ -4,20 +4,25 @@ class Api {
     this._headers = headers;
   }
 
+  _checkResponse(res) {
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`something goes wrong: ${res.status} ${res.statusText}`);
+}
+
   async getCardList() {
     const res = await fetch(this._baseUrl + "/cards", {
       headers: this._headers,
     });
-    return await (
-      res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+    return this._checkResponse(res)
   }
 
   async getUserInfo() {
     const res = await fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     });
-    return await (
-      res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+    return this._checkResponse(res)
   }
 
   getAppInfo() {
@@ -33,8 +38,7 @@ class Api {
         link: link,
       }),
     });
-    return await (
-      res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+    return this._checkResponse(res)
   }
 
   async removeCard(cardId) {
@@ -42,8 +46,7 @@ class Api {
       headers: this._headers,
       method: "DELETE",
     });
-    return await (
-      res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+    return this._checkResponse(res)
   }
 
   async changeLikeCardStatus(cardId, like) {
@@ -55,8 +58,7 @@ class Api {
           like,
         }),
       });
-      return await (
-        res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+      return this._checkResponse(res)
     } else {
       const res_1 = await fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
         headers: this._headers,
@@ -76,8 +78,7 @@ class Api {
         about: about,
       }),
     });
-    return await (
-      res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+    return this._checkResponse(res)
   }
 
   async setUserAvatar(link) {
@@ -88,8 +89,7 @@ class Api {
         avatar: link,
       }),
     });
-    return await (
-      res.ok ? res.json() : Promise.reject("Error" + res.statusText));
+    return this._checkResponse(res)
   }
 }
 

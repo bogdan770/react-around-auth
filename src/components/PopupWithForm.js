@@ -17,7 +17,6 @@ function PopupWithForm(props) {
           onSubmit={props.onSubmit}
           // id="popup__form-edit"
           className="popup__form"
-          noValidate
         >
           <button className="popup__button" type="submit">
             {props.buttonText}

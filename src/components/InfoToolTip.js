@@ -22,7 +22,7 @@ export const InfoToolTip = ({
         {isRegistered && (
           <>
             <button
-              className="popup__close button button_hover_dark"
+              className="popup__close"
               type="button"
               onClick={handleCloseSuccessPopup}
             />
@@ -36,10 +36,10 @@ export const InfoToolTip = ({
             </h2>
           </>
         )}
-        {location.pathname === 'signup' && !isRegistered && (
+        {!isRegistered && (
           <>
             <button
-              className="popup__close  button button_hover_dark"
+              className="popup__close"
               type="button"
               onClick={closeAllPopups}
             />

@@ -36,7 +36,6 @@ export function Card({
   }
 
   return (
-    <>
       <li className="element">
         <button
           className={cardDeleteButtonClassName}
@@ -60,6 +59,5 @@ export function Card({
           </div>
         </div>
       </li>
-    </>
   );
 }
