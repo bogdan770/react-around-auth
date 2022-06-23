@@ -303,12 +303,6 @@ function App() {
                   isOpen={isImagePopupOpen}
                   isClose={closeAllPopups}
                 />
-                      <InfoToolTip
-                  isOpen={isInfoToolTipPopupOpen}
-                  closeAllPopups={closeAllPopups}
-                  isRegistered={isRegistered}
-                  handleCloseSuccessPopup={handleCloseSuccessPopup}
-                />
               </ProtectedRoute>
             }
             />
@@ -355,6 +349,12 @@ function App() {
           />
         </Route>
       </Routes>
+          <InfoToolTip
+            isOpen={isInfoToolTipPopupOpen}
+            closeAllPopups={closeAllPopups}
+            isRegistered={isRegistered}
+            handleCloseSuccessPopup={handleCloseSuccessPopup}
+            />
     </CurrentUserContext.Provider>
   );
           }

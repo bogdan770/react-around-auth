@@ -19,10 +19,10 @@ export const InfoToolTip = ({
       ].join(' ')}
     >
       <div className="popup__container popup__container_type_info-tool-tip">
-        {isRegistered && (
+        {isRegistered ? (
           <>
             <button
-              className="popup__close"
+              className="popup__close button button_hover_dark"
               type="button"
               onClick={handleCloseSuccessPopup}
             />
@@ -35,11 +35,11 @@ export const InfoToolTip = ({
               Success! You have now been registered.
             </h2>
           </>
-        )}
-        {!isRegistered && (
+        ):
+         (
           <>
             <button
-              className="popup__close"
+              className="popup__close  button button_hover_dark"
               type="button"
               onClick={closeAllPopups}
             />
